@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Science du sommeil — Cycles, phases REM et neurologie | Insomaniaque</title>
+  <meta name="description" content="Tout comprendre sur la science du sommeil : cycles, phases REM, sommeil profond, neurologie et chronotypes. Articles rigoureux et accessibles sur Insomaniaque.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://insomaniaque.fr/science-du-sommeil/">
+  <meta property="og:title" content="Science du sommeil — Cycles, phases REM et neurologie | Insomaniaque">
+  <meta property="og:description" content="Tout comprendre sur la science du sommeil : cycles, phases REM, sommeil profond, neurologie et chronotypes.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:      #08111d;
+      --bg2:     #0e1e30;
+      --bg3:     #0a1520;
+      --blue:    #7ab3d4;
+      --gold:    #c9b87a;
+      --violet:  #a07ae0;
+      --green:   #6ac9a0;
+      --text:    #e8e0d0;
+      --muted:   #6a8fa8;
+      --border:  rgba(122,179,212,0.12);
+      --cat-color: #7ab3d4;
+      --cat-bg:    rgba(122,179,212,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,17,29,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--gold); }
+    .nav-logo span { color: var(--blue); font-style: italic; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 400; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a.active { color: var(--cat-color); }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 16px 40px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .breadcrumb a { color: var(--muted); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cat-color); }
+
+    /* HEADER CATÉGORIE */
+    .cat-header {
+      background: radial-gradient(ellipse 80% 100% at 50% 0%, #0a2040 0%, var(--bg) 70%);
+      padding: 56px 40px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cat-header-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: var(--cat-bg);
+      border: 1px solid rgba(122,179,212,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--cat-color);
+      font-style: italic;
+    }
+
+    .cat-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--cat-color);
+      margin-bottom: 14px;
+    }
+
+    .cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 400;
+      color: #f0e8d5;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .cat-desc {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* SEO INTRO */
+    .seo-intro {
+      background: var(--bg2);
+      padding: 48px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .seo-intro-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .seo-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #ddd4be;
+      margin-bottom: 16px;
+    }
+    .seo-intro p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+    .seo-intro p + p { margin-top: 12px; }
+    .seo-intro strong { color: var(--text); font-weight: 500; }
+
+    /* ARTICLES */
+    .articles-section {
+      padding: 56px 40px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 36px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 400; color: #e0d4b8; white-space: nowrap;
+    }
+    .section-rule {
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .article-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .article-card:hover {
+      border-color: rgba(122,179,212,0.3);
+      transform: translateY(-2px);
+    }
+
+    .article-top {
+      height: 120px;
+      background: radial-gradient(ellipse at 50% 130%, #0d3a6e, #060f1a);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+
+    .article-top-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: rgba(122,179,212,0.15);
+      font-style: italic;
+      user-select: none;
+    }
+
+    .article-glow {
+      position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+      width: 100px; height: 50px; border-radius: 50%;
+      background: #4a8fc0; filter: blur(20px); opacity: 0.3;
+    }
+
+    .article-body { padding: 24px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .article-cat-tag {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--cat-color);
+    }
+    .article-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); opacity: 0.4; }
+    .article-read-time { font-size: 11px; color: var(--muted); opacity: 0.6; }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px; line-height: 1.4;
+      color: #ddd4be; margin-bottom: 12px;
+    }
+
+    .article-excerpt {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.7; flex: 1;
+    }
+
+    .article-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 20px;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--cat-color);
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .article-link:hover { opacity: 1; }
+
+    /* AUTRES CATÉGORIES */
+    .other-cats {
+      background: var(--bg2);
+      padding: 56px 40px;
+      border-top: 1px solid var(--border);
+    }
+    .other-cats-inner { max-width: 1040px; margin: 0 auto; }
+
+    .other-cats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .other-cat-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 16px;
+      transition: border-color 0.2s;
+    }
+    .other-cat-card:hover { border-color: rgba(122,179,212,0.25); }
+
+    .other-cat-tag {
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .other-cat-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px; color: #c8c0b0; line-height: 1.4;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--bg3);
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+    }
+    .footer-inner {
+      max-width: 1040px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--gold); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--muted); opacity: 0.5; transition: opacity 0.2s; }
+    .footer-links a:hover { opacity: 0.8; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .breadcrumb { padding: 12px 20px; }
+      .cat-header { padding: 40px 20px; }
+      .seo-intro { padding: 36px 20px; }
+      .articles-section { padding: 40px 20px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .other-cats { padding: 40px 20px; }
+      .other-cats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer { padding: 24px 20px; }
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">Insomani<span>aque</span></a>
+    <ul class="nav-links">
+      <li><a href="/insomaniaque/science-du-sommeil/" class="active">Science du sommeil</a></li>
+      <li><a href="/insomaniaque/troubles-du-sommeil/">Troubles du sommeil</a></li>
+      <li><a href="/insomaniaque/reves-interpretation/">Rêves &amp; interprétation</a></li>
+      <li><a href="/insomaniaque/bien-dormir/">Bien dormir</a></li>
+      <li><a href="/insomaniaque/spiritualite-traditions/">Spiritualité</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Accueil</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Science du sommeil</span>
+  </div>
+
+  <!-- HEADER CATÉGORIE -->
+  <header class="cat-header">
+    <div class="cat-header-icon">N</div>
+    <p class="cat-tag">Science du sommeil</p>
+    <h1 class="cat-title">Ce qui se passe vraiment<br>dans votre cerveau chaque nuit</h1>
+    <p class="cat-desc">Cycles, phases REM, sommeil profond, neurologie, hormones et chronotypes. La science du sommeil expliquée avec rigueur et sans jargon inutile.</p>
+  </header>
+
+  <!-- SEO INTRO -->
+  <section class="seo-intro">
+    <div class="seo-intro-inner">
+      <h2>Comprendre la science du sommeil pour mieux dormir</h2>
+      <p>Le sommeil est l'un des phénomènes biologiques les plus complexes et les plus mal compris de notre quotidien. Chaque nuit, notre cerveau traverse plusieurs <strong>cycles de sommeil</strong> d'environ 90 minutes, alternant entre sommeil léger, sommeil profond et <strong>sommeil paradoxal</strong>. Ces phases ne sont pas interchangeables : chacune remplit des fonctions précises et irremplaçables.</p>
+      <p>Le sommeil profond, ou phase N3, est le grand réparateur physique. C'est pendant lui que le corps sécrète l'hormone de croissance, répare les tissus et renforce le système immunitaire. Le <strong>sommeil paradoxal</strong>, ou REM, est lui essentiel à la mémoire, à la régulation émotionnelle et à la créativité. Comprendre ces mécanismes, c'est comprendre pourquoi la qualité du sommeil importe autant que sa quantité.</p>
+      <p>Dans cette catégorie, nous explorons la neurologie du sommeil, le rôle des hormones comme la <strong>mélatonine</strong> et le cortisol, les <strong>chronotypes</strong> (êtes-vous du matin ou du soir ?), et tout ce que la recherche contemporaine nous apprend sur ce tiers de notre vie que nous passons dans le noir.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="articles-section">
+    <div class="section-header">
+      <h2 class="section-title">Articles</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="articles-grid">
+
+      <a href="/les-cycles-du-sommeil/" class="article-card">
+        <div class="article-top">
+          <div class="article-glow"></div>
+          <div class="article-top-label">N</div>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat-tag">Science</span>
+            <span class="article-dot"></span>
+            <span class="article-read-time">8 min de lecture</span>
+          </div>
+          <h3 class="article-title">Les cycles du sommeil : tout comprendre sur vos nuits</h3>
+          <p class="article-excerpt">Du sommeil léger au REM, ce qui se passe réellement dans votre cerveau pendant les 90 minutes d'un cycle. Pourquoi certains réveils vous laissent frais et d'autres épuisé.</p>
+          <span class="article-link">Lire l'article →</span>
+        </div>
+      </a>
+
+      <a href="/le-sommeil-paradoxal/" class="article-card">
+        <div class="article-top">
+          <div class="article-glow"></div>
+          <div class="article-top-label">R</div>
+        </div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-cat-tag">Science</span>
+            <span class="article-dot"></span>
+            <span class="article-read-time">10 min de lecture</span>
+          </div>
+          <h3 class="article-title">Le sommeil paradoxal : la phase la plus mystérieuse de nos nuits</h3>
+          <p class="article-excerpt">Cerveau en ébullition, corps paralysé, rêves intenses. Tout ce que la science sait sur le sommeil REM, son rôle dans la mémoire, les émotions et la créativité.</p>
+          <span class="article-link">Lire l'article →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- AUTRES CATÉGORIES -->
+  <section class="other-cats">
+    <div class="other-cats-inner">
+      <div class="section-header">
+        <h2 class="section-title">Explorer d'autres thèmes</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="other-cats-grid">
+        <a href="/insomaniaque/troubles-du-sommeil/" class="other-cat-card">
+          <div class="other-cat-tag" style="color:#e07a7a;">Troubles du sommeil</div>
+          <div class="other-cat-name">Insomnie, apnée, somnambulisme</div>
+        </a>
+        <a href="/insomaniaque/reves-interpretation/" class="other-cat-card">
+          <div class="other-cat-tag" style="color:#a07ae0;">Rêves &amp; interprétation</div>
+          <div class="other-cat-name">Décrypter le langage de l'inconscient</div>
+        </a>
+        <a href="/insomaniaque/bien-dormir/" class="other-cat-card">
+          <div class="other-cat-tag" style="color:#6ac9a0;">Bien dormir</div>
+          <div class="other-cat-name">Rituels, alimentation, environnement</div>
+        </a>
+        <a href="/insomaniaque/spiritualite-traditions/" class="other-cat-card">
+          <div class="other-cat-tag" style="color:#c9b87a;">Spiritualité</div>
+          <div class="other-cat-name">Jung, rêves prémonitoires, traditions</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Insomaniaque</div>
+      <div class="footer-links">
+        <a href="/">Accueil</a>
+        <a href="/insomaniaque/a-propos/">À propos</a>
+        <a href="/insomaniaque/contact/">Contact</a>
+        <a href="/insomaniaque/mentions-legales/">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
